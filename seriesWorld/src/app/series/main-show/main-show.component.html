@@ -1,0 +1,29 @@
+<div class="show" [style.backgroundImage]="mainBackground">
+    <nav class="navbar navbar-expand-lg">
+        <div class="navbar-brand">
+            <img src="/assets/picts/serie'sWorldLogo.png" class="img-fluid w-100" alt="seriesWorldLogo" />
+        </div>
+        <button type="button" id="btnBars"><i class="fas fa-bars"></i></button>
+        <div class="navbar-nav">
+            <button type="button" id="btnIdentify">S'Identifier</button>
+            <form action="/search" method="post">
+                <label for="search"></label>
+                <input type="text" name="search" id="search" placeholder="Entrer la Série">
+                <button type="submit" id="btnSearch"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </nav>
+    <div class="listShow">
+        <div class="row">
+            <div class="col-lg-4 serie" [id]="first.id" *ngFor="let first of serieFirst">
+                <img [src]="first.pict" (mouseenter)="showUnivers(first.wallpaper)" (mouseleave)="hideUnivers ()" routerLink="['show-serie', serie.id]" class="img-fluid w-100" alt="gotLogo" />
+            </div>
+            <div class="col-lg-4 serie" [id]="second.id" *ngFor="let second of serieSecond">
+                <img [src]="second.pict" (mouseenter)="showUnivers(second.wallpaper)" (mouseleave)="hideUnivers ()" routerLink="['show-serie', serie.id]" class="img-fluid w-100" alt="gotLogo" />
+            </div>
+            <div class="col-lg-4 serie" [id]="third.id" *ngFor="let third of serieThird">
+                <img [src]="third.pict" (mouseenter)="showUnivers(third.wallpaper)" (mouseleave)="hideUnivers ()" routerLink="['show-serie', serie.id]" class="img-fluid w-100" alt="gotLogo" />
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+    display: block;
+}
+
+// MIXIN & ROOT
+@mixin flex ($flexDirection) {
+    display: flex;
+    align-items: center;
+    flex-direction: $flexDirection;
+}
+
+// MAIN-SHOW
+.show {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/assets/picts/seriesWorldBackground.png');
+    nav {
+        @include flex (row);
+        justify-content: space-between;
+        .navbar-brand {
+            .img-fluid {
+                height: 150px;
+                max-width: 200px;
+            }
+        }
+        #btnBars {
+            display: none;
+            font-size: 1.2em;
+            color: azure;
+            border: transparent;
+            background: transparent;
+        }
+        .navbar-nav {
+            column-gap: 40px;
+            margin-right: 20px;
+            @include flex (row);
+            justify-content: space-between;
+            #btnIdentify {
+                color: azure;                
+                border: 1px solid azure;
+                background: transparent;
+            }
+            form {
+                input {
+                    color: azure;
+                    background: transparent;
+                    border: 1px solid azure;
+                }
+                #btnSearch {
+                    color: azure;
+                    border: 1px solid azure;
+                    background: transparent;
+                }
+            }
+        }
+    }
+    .listShow {
+        position: absolute;
+        top: 80%;
+        left: -6%;
+        .row {
+            .serie {
+                .img-fluid {
+                    opacity: 0.6;
+                    height: 160px;
+                    cursor: pointer;
+                    max-width: 320px;
+                    margin-left: 220px;
+                    margin-right: 120px;
+                    transition: all 0.25ms ease;
+                    &:hover {
+                        opacity: 1.0;
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+       
+    }
+}
+
